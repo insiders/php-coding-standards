@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+use Insiders\PhpCodingStandards\PhpCsFixer\Rules;
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+return Config::create()
+    ->setRules(Rules::getRulesForPHP72())
+    ->setRiskyAllowed(true)
+    ->setFinder(Finder::create()->name('.php_cs.dist')->in(__DIR__));

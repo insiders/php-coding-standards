@@ -1,0 +1,24 @@
+{
+    "name": "insiders/php-coding-standards",
+    "description": "Contains a set of rules for PHP-CS-Fixer",
+    "type": "library",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Insiders Online B.V.",
+            "email": "info@insiders.nl"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Insiders\\PhpCodingStandards\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
