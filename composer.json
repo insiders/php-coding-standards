@@ -2,6 +2,7 @@
     "name": "insiders/php-coding-standards",
     "description": "Contains a set of rules for PHP-CS-Fixer",
     "type": "library",
+    "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
         {
