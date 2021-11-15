@@ -6,7 +6,8 @@ use Insiders\PhpCodingStandards\PhpCsFixer\Rules;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
-return Config::create()
+return (new Config())
     ->setRules(Rules::getRulesForPHP72())
     ->setRiskyAllowed(true)
-    ->setFinder(Finder::create()->name('.php_cs.dist')->in(__DIR__));
+    ->setFinder(Finder::create()->in(__DIR__))
+    ->setCacheFile('.php-cs-fixer.cache');

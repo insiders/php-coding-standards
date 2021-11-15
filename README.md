@@ -8,7 +8,7 @@ composer require --dev insiders/php-coding-standards
 
 ## Usage
 
-Place a file named `.php_cs.dist` that has the following content in your project root directory.
+Place a file named `.php-cs-fixer.dist.php` that has the following content in your project root directory.
 
 ```php
 <?php
@@ -19,11 +19,11 @@ use Insiders\PhpCodingStandards\PhpCsFixer\Rules;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
-return Config::create()
-    // use specific rules for your php version, see Rules class for reference
+return (new Config())
     ->setRules(Rules::getRulesForPHP72())
     ->setRiskyAllowed(true)
-    ->setFinder(Finder::create()->in(__DIR__));
+    ->setFinder(Finder::create()->in(__DIR__))
+    ->setCacheFile('.php-cs-fixer.cache');
 ```
 
 ### Manual execute
