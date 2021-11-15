@@ -25,6 +25,13 @@ final class Rules
         return \array_merge(self::getRulesForPHP73($rules), $overrideRules);
     }
 
+    public static function getRulesForPHP80(array $overrideRules = []): array
+    {
+        $rules = [];
+
+        return \array_merge(self::getRulesForPHP74($rules), $overrideRules);
+    }
+
     private static function getBasicPhpRules(): array
     {
         return [
@@ -42,24 +49,39 @@ final class Rules
             'concat_space' => [
                 'spacing' => 'one',
             ],
-            'linebreak_after_opening_tag' => true,
-            'native_function_invocation' => true,
-            'no_extra_blank_lines' => [
-                'break',
-                'continue',
-                'extra',
-                'return',
-                'throw',
-                'use',
-                'parenthesis_brace_block',
-                'square_brace_block',
-                'curly_brace_block',
+            'echo_tag_syntax' => [
+                'format' => 'long',
             ],
-            'no_short_echo_tag' => true,
+            'global_namespace_import' => [
+                'import_classes' => false,
+                'import_constants' => false,
+                'import_functions' => false,
+            ],
+            'linebreak_after_opening_tag' => true,
+            'native_function_invocation' => [
+                'include' => ['@all'],
+            ],
+            'no_extra_blank_lines' => [
+                'tokens' => [
+                    'break',
+                    'continue',
+                    'extra',
+                    'return',
+                    'throw',
+                    'use',
+                    'parenthesis_brace_block',
+                    'square_brace_block',
+                    'curly_brace_block',
+                ],
+            ],
             'no_useless_else' => true,
             'no_useless_return' => true,
-            'ordered_imports' => true,
-            'phpdoc_align' => false,
+            'ordered_imports' => [
+                'sort_algorithm' => 'alpha',
+            ],
+            'phpdoc_align' => [
+                'align' => 'left',
+            ],
             'phpdoc_no_empty_return' => false,
             'phpdoc_summary' => false,
             'strict_comparison' => true,
