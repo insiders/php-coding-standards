@@ -82,6 +82,7 @@ final class Rules
             'phpdoc_align' => [
                 'align' => 'left',
             ],
+            'phpdoc_to_comment' => false,
             'phpdoc_no_empty_return' => false,
             'phpdoc_summary' => false,
             'strict_comparison' => true,
