@@ -20,16 +20,31 @@ final class Rules
 
     public static function getRulesForPHP74(array $overrideRules = []): array
     {
-        $rules = [];
+        $rules = [
+            '@PHP74Migration' => true,
+            '@PHP74Migration:risky' => true,
+        ];
 
         return \array_merge(self::getRulesForPHP73($rules), $overrideRules);
     }
 
     public static function getRulesForPHP80(array $overrideRules = []): array
     {
-        $rules = [];
+        $rules = [
+            '@PHP80Migration' => true,
+            '@PHP80Migration:risky' => true,
+        ];
 
         return \array_merge(self::getRulesForPHP74($rules), $overrideRules);
+    }
+
+    public static function getRulesForPHP81(array $overrideRules = []): array
+    {
+        $rules = [
+            '@PHP81Migration' => true,
+        ];
+
+        return \array_merge(self::getRulesForPHP80($rules), $overrideRules);
     }
 
     private static function getBasicPhpRules(): array
