@@ -47,6 +47,24 @@ final class Rules
         return \array_merge(self::getRulesForPHP80($rules), $overrideRules);
     }
 
+    public static function getRulesForPHP82(array $overrideRules = []): array
+    {
+        $rules = [
+            '@PHP82Migration' => true,
+        ];
+
+        return \array_merge(self::getRulesForPHP81($rules), $overrideRules);
+    }
+
+    public static function getRulesForPHP83(array $overrideRules = []): array
+    {
+        $rules = [
+            '@PHP83Migration' => true,
+        ];
+
+        return \array_merge(self::getRulesForPHP82($rules), $overrideRules);
+    }
+
     private static function getBasicPhpRules(): array
     {
         return [
